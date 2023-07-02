@@ -1,0 +1,7 @@
+- name: Install postman
+  community.general.snap:
+    classic: true
+    name: postman
+  tags:
+    - install
+    - postman
