@@ -1,0 +1,29 @@
+- name: Get latest version of lazygit
+  shell: |
+    curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*'
+  register: shell_output
+  tags: [install, lazygit]
+
+- set_fact:
+    lazygit_version: "{{ shell_output.stdout }}"
+  tags: [install, lazygit]
+
+- name: Download lazygit tarball
+  get_url:
+    url: "https://github.com/jesseduffield/lazygit/releases/download/v{{ lazygit_version }}/lazygit_{{ lazygit_version }}_Linux_x86_64.tar.gz"
+    dest: "/tmp/lazygit.tar.gz"
+  tags: [install, lazygit]
+
+- name: Extract lazygit from tarball
+  unarchive:
+    src: "/tmp/lazygit.tar.gz"
+    dest: "/tmp"
+    remote_src: yes
+  tags: [install, lazygit]
+
+- name: Install lazygit
+  command:
+    cmd: install /tmp/lazygit /usr/local/bin
+    creates: /usr/local/bin/lazygit
+  become: yes
+  tags: [install, lazygit]
