@@ -39,3 +39,12 @@
   tags:
     - install
     - core
+
+- name: Install dotnet
+  become: true
+  apt:
+    name: ["aspnetcore-runtime-7.0", "dotnet-sdk-7.0"]
+  tags:
+    - install
+    - core
+    - dotnet 

@@ -22,7 +22,6 @@
     - include: tasks/zsh-setup.yml
     - include: tasks/rust.yml
     - include: tasks/slack-setup.yml
-    - include: tasks/postman.yml
     - include: tasks/nvim-setup.yml
     - include: tasks/aws-cli.yml
     - include: tasks/dotfiles.yml

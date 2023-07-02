@@ -2,10 +2,8 @@ xset startup file
 docker desktop config
 edge install
 vlc
-discrod
 set docker desktop auto startup
 screen tearing issues
-lazygit
 
 jdk
 setup swap file
@@ -13,6 +11,5 @@ setup swap file
 todoist
 chtsheet thing from promi
 todoist
-github cli
-
-rofi
+rider / jetbrains
+treesitter
