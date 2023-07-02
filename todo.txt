@@ -1,7 +1,5 @@
 xset startup file
 docker desktop config
-postman
-lazygit
 edge install
 vlc
 discrod
@@ -15,3 +13,6 @@ setup swap file
 todoist
 chtsheet thing from promi
 todoist
+github cli
+
+rofi
