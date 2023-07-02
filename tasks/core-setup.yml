@@ -27,10 +27,11 @@
 - name: Install System Packages 4 (snap)
   become: true
   community.general.snap:
-    name: ["postman", "discord"]
+    name: ["postman", "discord", "vlc"]
   tags:
     - install
     - core
+    - vlc
 
 - name: Install Clang
   become: true
@@ -47,4 +48,3 @@
   tags:
     - install
     - core
-    - dotnet 
