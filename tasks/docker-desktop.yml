@@ -1,0 +1,15 @@
+- name: Download Docker Desktop
+  get_url:
+    url: https://desktop.docker.com/linux/main/amd64/docker-desktop-4.20.1-amd64.deb?_gl=1*15ql8il*_ga*MTMxNDI5OTI5Ni4xNjg3MTM1NDk0*_ga_XJWPQMJYHQ*MTY4NzE5MzU1Mi40LjEuMTY4NzE5ODUxNS4yOS4wLjA.    
+    dest: /tmp/docker-desktop.deb
+  tags:
+    - install
+    - docker
+
+- name: Install docker .deb package
+  become: true
+  apt:
+    deb: /tmp/docker-desktop.deb
+  tags:
+    - install
+    - docker

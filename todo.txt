@@ -1,0 +1,17 @@
+xset startup file
+docker desktop config
+postman
+lazygit
+edge install
+vlc
+discrod
+set docker desktop auto startup
+screen tearing issues
+lazygit
+
+jdk
+setup swap file
+
+todoist
+chtsheet thing from promi
+todoist

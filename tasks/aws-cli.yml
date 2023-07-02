@@ -1,0 +1,19 @@
+- name: Download AWS CLI
+  shell: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" 
+  tags:
+    - aws
+
+- name: Unzip AWS CLI
+  shell: unzip awscliv2.zip 
+  tags:
+    - aws
+
+- name: install AWS CLI
+  shell: sudo ./aws/install
+  tags:
+    - aws
+
+- name: cleanup downloadj
+  shell: rm awscliv2.zip && rm -r aws
+  tags:
+    - aws

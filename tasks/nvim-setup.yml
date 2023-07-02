@@ -1,0 +1,16 @@
+- name: Install neovim
+  community.general.snap:
+    classic: true
+    name: nvim
+  tags:
+    - install
+    - neovim
+
+- name: Install Astrovim
+  ansible.builtin.git:
+    repo: 'https://github.com/AstroNvim/AstroNvim'
+    dest: "~/.config/nvim"
+    depth: 1
+  tags: 
+    - install 
+    - neovim
