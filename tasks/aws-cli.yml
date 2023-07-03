@@ -1,19 +1,31 @@
 - name: Download AWS CLI
-  shell: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" 
+  ansible.builtin.get_url:
+    url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+    dest: /tmp/awscliv2.zip
   tags:
     - aws
 
 - name: Unzip AWS CLI
-  shell: unzip awscliv2.zip 
+  ansible.builtin.unarchive:
+    src: /tmp/awscliv2.zip
+    dest: /tmp/
+    remote_src: yes
   tags:
     - aws
 
-- name: install AWS CLI
-  shell: sudo ./aws/install
+- name: Install AWS CLI
+  become: true
+  ansible.builtin.command:
+    cmd: /tmp/aws/install --update
   tags:
     - aws
 
-- name: cleanup downloadj
-  shell: rm awscliv2.zip && rm -r aws
+- name: Cleanup download
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - /tmp/awscliv2.zip
+    - /tmp/aws
   tags:
     - aws
