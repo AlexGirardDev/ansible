@@ -8,16 +8,6 @@
     - install
     - productivity
 
-- name: shutter ppa (ppa:linuxuprising/shutter)
-  become: true
-  apt_repository:
-   repo: ppa:linuxuprising/shutter
-   state: present
-   update_cache: True
-  tags:
-    - install
-    - productivity
-
 - name: Install packages
   become: true
   apt:
