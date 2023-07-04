@@ -30,4 +30,5 @@
     - include: tasks/lazygit.yml
     - include: tasks/chrome.yml
     - include: tasks/productivity-tools.yml
+    - include: tasks/jetbrains.yml
     # - include: tasks/lsp.yml

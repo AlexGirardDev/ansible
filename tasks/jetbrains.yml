@@ -1,0 +1,29 @@
+- name: Install rider
+  become: true
+  community.general.snap:
+    name: rider
+    channel: edge
+  tags:
+    - install
+    - rider
+    - jetbrains
+
+- name: Install intellij-idea-ultimate
+  become: true
+  community.general.snap:
+    name: idea
+    channel: edge
+  tags:
+    - install
+    - idea
+    - jetbrains
+
+- name: Install clion
+  become: true
+  community.general.snap:
+    name: clion
+    channel: edge
+  tags:
+    - install
+    - clion
+    - jetbrains
