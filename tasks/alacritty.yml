@@ -1,7 +1,21 @@
+- name: Install alacritty dependencies
+  become: true
+  apt:
+    name:
+    - cmake
+    - pkg-config
+    - libfreetype6-dev
+    - libfontconfig1-dev
+    - libxcb-xfixes0-dev
+    - libxkbcommon-dev
+    - python3
+  tags:
+    - install
+    - alacritty
+
 - name: Install i3status-rust via cargo
   command:
     cmd: cargo install alacritty
-  become: true
   tags:
     - install
     - alacritty
