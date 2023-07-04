@@ -18,6 +18,7 @@
     - include: tasks/git-setup.yml
     - include: tasks/core-setup.yml
     - include: tasks/node-setup.yml
+    - include: tasks/fonts.yml
     - include: tasks/npm-packages.yml
     - include: tasks/zsh-setup.yml
     - include: tasks/rust.yml

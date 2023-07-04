@@ -1,0 +1,25 @@
+- name: Clone i3status-rust repository
+  git:
+    repo: 'https://github.com/greshake/i3status-rust'
+    dest: '/tmp/i3status-rust'
+  tags:
+    - install
+    - i3status-rust
+
+- name: Install i3status-rust via cargo
+  command:
+    cmd: cargo install --path . --locked
+    chdir: /tmp/i3status-rust
+  become: true
+  tags:
+    - install
+    - i3status-rust
+
+- name: Run install script for i3status-rust
+  command:
+    cmd: ./install.sh
+    chdir: /tmp/i3status-rust
+  become: true
+  tags:
+    - install
+    - i3status-rust
