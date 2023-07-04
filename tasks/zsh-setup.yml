@@ -3,8 +3,11 @@
   apt: name=zsh
   tags: &tags_for_zsh_tasks [ 'install', 'productivity', 'dotfiles', 'zsh' ]
     
-- name: Change shell to zsh
-  shell: chsh -s $(which zsh)
+- name: Set shell to Zsh
+  become: true
+  ansible.builtin.user:
+    name: "{{ lookup('env', 'USER') }}"
+  shell: /bin/zsh
   tags: *tags_for_zsh_tasks
 
 - name: Check that the somefile.conf exists
@@ -19,7 +22,7 @@
   when: oh_my_stats.stat.exists == False
 
 - name: Install zsh-autosuggestions
-  ansible.builtin.git:
+  ansible.buirtin.git:
     repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
     dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
   tags: *tags_for_zsh_tasks
