@@ -1,0 +1,7 @@
+- name: Install i3status-rust via cargo
+  command:
+    cmd: cargo install alacritty
+  become: true
+  tags:
+    - install
+    - alacritty
