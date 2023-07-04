@@ -3,6 +3,7 @@
   community.general.snap:
     name: rider
     channel: edge
+    classic: true
   tags:
     - install
     - rider
@@ -13,6 +14,7 @@
   community.general.snap:
     name: idea
     channel: edge
+    classic: true
   tags:
     - install
     - idea
@@ -23,6 +25,7 @@
   community.general.snap:
     name: clion
     channel: edge
+    classic: true
   tags:
     - install
     - clion
