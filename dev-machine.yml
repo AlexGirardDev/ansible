@@ -17,6 +17,7 @@
     - include: tasks/ssh.yml
     - include: tasks/git-setup.yml
     - include: tasks/core-setup.yml
+    - include: tasks/dconf.yml
     - include: tasks/node-setup.yml
     - include: tasks/fonts.yml
     - include: tasks/npm-packages.yml
