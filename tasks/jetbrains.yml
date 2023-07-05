@@ -12,7 +12,7 @@
 - name: Install intellij-idea-ultimate
   become: true
   community.general.snap:
-    name: idea
+    name: intellij-idea-ultimate
     channel: edge
     classic: true
   tags:
