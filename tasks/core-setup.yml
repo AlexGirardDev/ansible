@@ -29,7 +29,11 @@
   apt:
     name: 
     - zathura  
-    - arand
+    - arandr
+    - fuse 
+    - libfuse2
+    - polybar
+    - feh
   tags:
     - install
     - core
