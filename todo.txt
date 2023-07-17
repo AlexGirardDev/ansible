@@ -1,7 +1,5 @@
 xset startup file
 docker desktop config
-edge install
-vlc
 set docker desktop auto startup
 screen tearing issues
 
@@ -13,3 +11,5 @@ chtsheet thing from promi
 todoist
 rider / jetbrains
 treesitter
+spotify
+tmux sessionizer

@@ -36,7 +36,7 @@
 - name: Install System Packages 5 (snap classic)
   become: true
   community.general.snap:
-    name: ["todoist", "obsiadian"]
+    name: ["todoist", "obsiadian", "dotnet-sdk"]
     classic: true
   tags:
     - install
@@ -50,10 +50,10 @@
     - install
     - core
 
-- name: Install dotnet
-  become: true
-  apt:
-    name: ["aspnetcore-runtime-7.0", "dotnet-sdk-7.0"]
-  tags:
-    - install
-    - core
+# - name: Install dotnet
+#   become: true
+#   apt:
+#     name: ["aspnetcore-runtime-7.0", "dotnet-sdk-7.0"]
+#   tags:
+#     - install
+#     - core
