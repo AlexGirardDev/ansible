@@ -24,10 +24,25 @@
     - install
     - core
 
+- name: Install System Packages 3.5 (the rester)
+  become: true
+  apt:
+    name:
+    - zathura
+    - arandr
+    - fuse
+    - libfuse2
+    - polybar
+    - feh
+  tags:
+    - install
+    - core
+    - test
+
 - name: Install System Packages 4 (snap)
   become: true
   community.general.snap:
-    name: ["postman", "discord", "vlc", "spotify", "miro"]
+    name: ["postman", "discord", "vlc", "spotify"]
   tags:
     - install
     - core
@@ -36,7 +51,8 @@
 - name: Install System Packages 5 (snap classic)
   become: true
   community.general.snap:
-    name: ["todoist", "obsiadian", "dotnet-sdk"]
+    name: ["todoist", "obsidian", "dotnet-sdk"]
+    name: ["todoist", "obsidian"]
     classic: true
   tags:
     - install
