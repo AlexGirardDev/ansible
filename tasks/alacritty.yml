@@ -13,9 +13,30 @@
     - install
     - alacritty
 
-- name: Install i3status-rust via cargo
+- name: Install alacritty via cargo
   command:
     cmd: cargo install alacritty
+  tags:
+    - install
+    - alacritty
+
+- name: Create Alacritty desktop file
+  become: true
+  copy:
+    dest: /usr/share/applications/alacritty.desktop
+    content: |
+      [Desktop Entry]
+      Version=1.0
+      Type=Application
+      Name=Alacritty
+      GenericName=Terminal
+      Comment=Alacritty: A cross-platform, GPU enhanced terminal emulator
+      TryExec=/home/alex/.cargo/bin/alacritty
+      Exec=/home/alex/.cargo/bin/alacritty
+      Icon=/path/to/your/icon.png
+      Terminal=false
+      Categories=System;TerminalEmulator;
+      Keywords=terminal;emulator;
   tags:
     - install
     - alacritty
