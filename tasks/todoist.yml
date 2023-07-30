@@ -1,0 +1,36 @@
+- name: Check if GOPATH is set
+  shell: echo $GOPATH
+  register: gopath_exists
+  ignore_errors: yes
+  tags:
+    - install
+    - golang
+
+- name: Create directory for todoist
+  file:
+    path: "{{ gopath_exists.stdout }}/src/github.com/sachaos"
+    state: directory
+  when: gopath_exists.stdout != ""
+  tags:
+    - install
+    - golang
+
+- name: Clone todoist repo
+  git:
+    repo: https://github.com/sachaos/todoist.git
+    dest: "{{ gopath_exists.stdout }}/src/github.com/sachaos/todoist"
+    clone: yes
+    update: yes
+  when: gopath_exists.stdout != ""
+  tags:
+    - install
+    - golang
+
+- name: Install todoist
+  make:
+    chdir: "{{ gopath_exists.stdout }}/src/github.com/sachaos/todoist"
+    target: install
+  when: gopath_exists.stdout != ""
+  tags:
+    - install
+    - golang
