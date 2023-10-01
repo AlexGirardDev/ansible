@@ -1,0 +1,41 @@
+- hosts: localhost
+  pre_tasks:
+  - name: Update Apt
+    become: true
+    apt:
+      force_apt_get: true
+      update_cache: true
+      state: present
+    tags:
+      - install
+      - core
+  tasks:
+    - name: Include git-setup
+      import_tasks: tasks/git-setup.yml
+      
+    - name: Include core-setup
+      import_tasks: tasks/core-setup.yml
+      
+    - name: Include node-setup
+      import_tasks: tasks/node-setup.yml
+      
+    - name: Include npm-packages
+      import_tasks: tasks/npm-packages.yml
+      
+    - name: Include zsh-setup
+      import_tasks: tasks/zsh-setup.yml
+      
+    - name: Include rust
+      import_tasks: tasks/rust.yml
+      
+    - name: Include nvim-setup
+      import_tasks: tasks/nvim-setup.yml
+      
+    - name: Include dotfiles
+      import_tasks: tasks/dotfiles.yml
+      
+    - name: Include lazygit
+      import_tasks: tasks/lazygit.yml
+      
+    - name: Include productivity-tools
+      import_tasks: tasks/productivity-tools.yml

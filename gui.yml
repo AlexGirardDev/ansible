@@ -1,0 +1,14 @@
+- hosts: localhost
+  pre_tasks:
+  - name: Update Apt
+    become: true
+    apt:
+      force_apt_get: true
+      update_cache: true
+      state: present
+    tags:
+      - install
+      - core
+  tasks:
+    - name: Include core-gui
+      import_tasks: tasks/core-gui.yml

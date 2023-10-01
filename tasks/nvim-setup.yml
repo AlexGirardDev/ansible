@@ -1,8 +1,8 @@
-- name: Install neovim
+- name: Download Nvim
   become: true
-  community.general.snap:
-    classic: true
-    name: nvim
+  ansible.builtin.get_url:
+    url: https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+    dest: ~/nvim.appimage
   tags:
     - install
     - neovim
