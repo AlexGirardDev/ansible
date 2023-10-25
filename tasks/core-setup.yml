@@ -17,7 +17,7 @@
 - name: Install System Packages 3 (the rest)
   become: true
   apt:
-    name: [ "compton", "curl", "htop", "golang", "lsof",  "ccache", "ninja-build", "python3-pip", "dconf-editor", "nvidia-settings", "pavucontrol", "moreutils", "clangd", "ubuntu-mate-desktop", "gh" , "rofi", "i3", "keepass2"]
+    name: [ "compton", "curl", "htop", "golang", "lsof",  "ccache", "ninja-build", "python3-pip", "dconf-editor", "nvidia-settings", "pavucontrol", "moreutils", "clangd", "ubuntu-mate-desktop", "gh" , "rofi", "i3", "keepass2","exa"]
   tags:
     - install
     - core

@@ -1,0 +1,2 @@
+- import_playbook: cli-tasks.yml
+- import_playbook: gui-tasks.yml

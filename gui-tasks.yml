@@ -12,3 +12,6 @@
   tasks:
     - name: Include core-gui
       import_tasks: tasks/core-gui.yml
+    - name: Include vscode
+      import_tasks: tasks/vscode.yml
+

@@ -1,0 +1,15 @@
+- name: Download VS Code
+  get_url:
+    url: https://go.microsoft.com/fwlink/?LinkID=760868
+    dest: /tmp/vscode.deb
+  tags:
+    - install
+    - vscode
+
+- name: Install vscode .deb package
+  become: true
+  apt:
+    deb: /tmp/vscode.deb
+  tags:
+    - install
+    - vscode
