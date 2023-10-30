@@ -38,6 +38,7 @@
       - "keepass2"
       - "exa"
       - "autojump"
+      - "net-tools"
   tags:
     - install
     - core
