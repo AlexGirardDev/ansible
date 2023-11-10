@@ -14,4 +14,18 @@
       import_tasks: tasks/core-gui.yml
     - name: Include vscode
       import_tasks: tasks/vscode.yml
+    - name: Include alacritty
+      import_tasks: tasks/alacritty.yml
+    - name: Include chrome
+      import_tasks: tasks/chrome.yml
+    - name: Include chrome
+      import_tasks: tasks/chrome.yml
+    - name: Include dconf
+      import_tasks: tasks/dconf.yml
+    - name: Include docker Desktop
+      import_tasks: tasks/docker-desktop.yml
+    - name: Include fonts
+      import_tasks: tasks/fonts.yml
+    - name: Include Slack
+      import_tasks: task/slack-setup.yml
 

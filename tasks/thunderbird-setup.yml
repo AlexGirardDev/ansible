@@ -1,8 +1,0 @@
-- name: Install thunderbird
-  become: true
-  apt:
-    update_cache: yes
-    name: "thunderbird"
-  tags:
-    - install
-    - thunderbird

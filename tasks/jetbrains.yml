@@ -2,7 +2,6 @@
   become: true
   community.general.snap:
     name: rider
-    channel: edge
     classic: true
   tags:
     - install
@@ -13,20 +12,8 @@
   become: true
   community.general.snap:
     name: intellij-idea-ultimate
-    channel: edge
     classic: true
   tags:
     - install
     - idea
-    - jetbrains
-
-- name: Install clion
-  become: true
-  community.general.snap:
-    name: clion
-    channel: edge
-    classic: true
-  tags:
-    - install
-    - clion
     - jetbrains
