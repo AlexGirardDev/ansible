@@ -27,5 +27,7 @@
     - name: Include fonts
       import_tasks: tasks/fonts.yml
     - name: Include Slack
-      import_tasks: task/slack-setup.yml
+      import_tasks: tasks/slack-setup.yml
+    - name: Include discord
+      import_tasks: tasks/discord.yml
 
