@@ -2,15 +2,21 @@
   become: true
   ansible.builtin.get_url:
     url: https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
-    dest: ~/nvim.appimage
+    dest: /home/alex/nvim.appimage
   tags:
     - install
+    - neovim
+
+- name: making nvim executeable
+  shell: chmod +x /home/alex/nvim.appimage 
+  tags: 
+    - install 
     - neovim
 
 - name: Install Astrovim
   ansible.builtin.git:
     repo: 'https://github.com/AstroNvim/AstroNvim'
-    dest: "~/.config/nvim"
+    dest: "/home/alex/nvim.appimage"
     depth: 1
   tags: 
     - install 
