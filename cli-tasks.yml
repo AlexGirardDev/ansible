@@ -31,11 +31,11 @@
     - name: Include nvim-setup
       import_tasks: tasks/nvim-setup.yml
       
-    - name: Include dotfiles
-      import_tasks: tasks/dotfiles.yml
-      
     - name: Include lazygit
       import_tasks: tasks/lazygit.yml
       
     - name: Include productivity-tools
       import_tasks: tasks/productivity-tools.yml
+
+    - name: Include dotfiles
+      import_tasks: tasks/dotfiles.yml

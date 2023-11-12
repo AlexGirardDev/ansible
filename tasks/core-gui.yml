@@ -1,7 +1,7 @@
 - name: Install System Packages 4 (snap)
   become: true
   community.general.snap:
-    name: ["postman", "vlc", "spotify", "todoist"]
+    name: ["postman", "vlc", "spotify", "todoist","nomachine"]
   tags:
     - install
     - core
