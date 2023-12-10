@@ -30,4 +30,6 @@
       import_tasks: tasks/slack-setup.yml
     - name: Include discord
       import_tasks: tasks/discord.yml
+    - name: Include app-image-installer
+      import_tasks: tasks/app-image-installer.yml
 

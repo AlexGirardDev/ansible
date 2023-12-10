@@ -1,0 +1,17 @@
+- name: add appimage ppa
+  become: true
+  apt_repository:
+   repo: ppa:appimagelauncher-team/stable
+   state: present
+   update_cache: True
+  tags:
+    - install
+    - app-image
+
+- name: Install packages
+  become: true
+  apt:
+    name: [ "software-properties-common", "appimagelauncher"]
+  tags:
+    - install
+    - app-image
