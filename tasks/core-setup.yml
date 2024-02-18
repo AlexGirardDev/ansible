@@ -40,6 +40,8 @@
       - "autojump"
       - "net-tools"
       - "openssh-client"
+      - "fd-find"
+      - "ripgrep"
   tags:
     - install
     - core
